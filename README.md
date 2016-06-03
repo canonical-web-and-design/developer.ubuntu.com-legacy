@@ -11,7 +11,7 @@ sudo apt install python-dev python-django python-django-south python-psycopg2 pw
 Then install the python dependencies:
 
 ``` bash
-pip install -r requirements.txt
+pip install -r requirements/standard.txt
 ```
 
 And provision the database, [importing initial data](https://github.com/ubuntudesign/developer-data) if you have it:
