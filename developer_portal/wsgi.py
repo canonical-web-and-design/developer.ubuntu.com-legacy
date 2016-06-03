@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-os.environ["DJANGO_SETTINGS_MODULE"] = "charm_settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "developer_portal.settings"
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
