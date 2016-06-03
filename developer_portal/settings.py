@@ -9,13 +9,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+# System modules
+import os
+
+# Third party modules
+import dj_database_url
 from django.utils.translation import ugettext_lazy as _
 
 ADMIN_GROUP = 'ubuntudeveloperportal'
 EDITOR_GROUP = 'ubuntudeveloperportal-editors'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
 
@@ -147,6 +151,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# Update database settings from DATABASE_URL environment variable
+DATABASES['default'].update(dj_database_url.config())
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
