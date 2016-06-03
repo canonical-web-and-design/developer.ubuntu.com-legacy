@@ -14,14 +14,18 @@ Then install the python dependencies:
 pip install -r requirements.txt
 ```
 
+And provision the database, [importing initial data](https://github.com/ubuntudesign/developer-data) if you have it:
+
+``` bash
+# If you have an initial database fixture, either:
+# - Provide an INITIAL_FIXTURE_URL, or
+# - Place the fixture in developer_portal/fixtures/initial_content.json
+
+./manage.py migrate --noinput
+```
+
 ## Run the site
 
 ``` bash
 ./manage.py runserver
 ```
-
-## Importing data
-
-For instructions for how to import some initial data (to get the site looking like developer.ubuntu.com),
-visit [developer-data](https://github.com/ubuntudesign/developer-data) (you'll need to request access).
-
