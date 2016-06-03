@@ -53,3 +53,5 @@ django-openid-auth==0.7
 python-openid==2.2.5
 djangorestframework==3.3.2
 msgpack-python==0.4.7
+psycopg2==2.6.1
+
