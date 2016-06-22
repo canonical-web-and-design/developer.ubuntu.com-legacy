@@ -2,6 +2,18 @@
 
 *Not yet live: This fork of [lp:developer-ubuntu-com](https://launchpad.net/developer-ubuntu-com) is intended to become the new official codebase behind http://developer.ubuntu.com when it's ready.*
 
+## Local development
+
+The simplest way to run the site is to have [docker](https://www.docker.com/) installed and enabled for the current user, and then to run:
+
+``` bash
+make run
+```
+
+This should serve the site on `http://localhost:8017`.
+
+For more in-depth instructions, see [HACKING.md](HACKING.md).
+
 ## Initial content
 
 By default, the database won't be provisioned with any website content, so what you will see will look very similar to a vanilla [Django CMS](https://www.django-cms.org/) installation.
@@ -33,14 +45,3 @@ If you have access to the private [developer-data repository](https://github.com
 
    before runnning the site for the first time
 
-## Local development
-
-The simplest way to run the site is to have [docker](https://www.docker.com/) installed and enabled for the current user, and then to run:
-
-``` bash
-make run
-```
-
-This should serve the site on `http://localhost:8017`.
-
-For more in-depth instructions, see [HACKING.md](HACKING.md).
