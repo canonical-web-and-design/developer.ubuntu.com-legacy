@@ -34,7 +34,8 @@ def finish_previous_migrations(migrate_apps):
     for app_config in apps.get_app_configs():
         post_migrate.send(
             sender=app_config,
-            app_config=app_config
+            app_config=app_config,
+            verbosity=0
         )
 
 
@@ -44,6 +45,7 @@ def load_initial_content(migrate_apps, schema_editor):
     """
 
     finish_previous_migrations(migrate_apps)
+
     if download_fixture(
         fixture_url=os.environ.get('INITIAL_FIXTURE_URL'),
         target_path="developer_portal/fixtures/initial_content.json"
