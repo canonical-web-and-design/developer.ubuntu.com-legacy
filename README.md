@@ -22,13 +22,13 @@ If you have access to the private [developer-data repository](https://github.com
 
 1. Ensure you're logged in to GitHub with an account which has access to [ubuntudesign/developer-data](https://github.com/ubuntudesign/developer-data/)
 2. Visit https://github.com/ubuntudesign/developer-data/raw/master/initial-content.json, which will forward you to a new URL for the fixture containing an access token, something like:
-   ```
-   https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
-   ```
+    ```
+    https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
+    ```
 3. Use this new URL to set the `INITIAL_CONTENT_FIXTURE`, e.g.:
-   ```
-   export INITIAL_CONTENT_FIXTURE=https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
-   ```
+    ```
+    export INITIAL_CONTENT_FIXTURE=https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
+    ```
    before runnning the site for the first time
 
 ## Local development
