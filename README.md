@@ -43,5 +43,4 @@ If you have access to the private [developer-data repository](https://github.com
     export INITIAL_CONTENT_FIXTURE=https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
     ```
 
-   before runnning the site for the first time
-
+   before runnning the site for the first time.
