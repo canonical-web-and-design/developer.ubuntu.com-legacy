@@ -1,5 +1,7 @@
 # [developer.ubuntu.com](http://developer.ubuntu.com)
 
+*Not yet live: This version is to replace what's currently on developer.ubuntu.com when it's ready.*
+
 The simplest way to run the site is to have [docker](https://www.docker.com/) installed and enabled for the current user, and then to run:
 
 ``` bash
