@@ -21,7 +21,7 @@ docker run \
   --volume "`pwd`":"`pwd`" \
   --workdir "`pwd`" \
   --env-file .env $(patsubst %,--env PORT=%,$(PORT))  \
-  ubuntudesign/devrun:v1.0.1
+  ubuntudesign/devrun:v1.0.2
 endef
 
 # Error message if docker is missing
