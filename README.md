@@ -32,7 +32,7 @@ in which case the initial run of `migrate` will download this file to `developer
 
 If you have access to the private [developer-data repository](https://github.com/ubuntudesign/developer-data/), you can download the initial content from there.
 
-1. Ensure you're logged in to GitHub with an account which has access to [ubuntudesign/developer-data](https://github.com/ubuntudesign/developer-data/)
+1. Ensure you're logged in to GitHub with an account which has access to [ubuntudesign/developer-data](https://github.com/ubuntudesign/developer-data/).
 2. Visit https://github.com/ubuntudesign/developer-data/raw/master/initial-content.json, which will forward you to a new URL for the fixture containing an access token, something like:
     ```
     https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
