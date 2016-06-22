@@ -4,24 +4,15 @@
 # https://github.com/ubuntudesign/devrun/tree/master/bin
 ##
 
-# Tell ubuntudesign/devrun where to find docker
-# Based on https://github.com/docker/compose/releases/download/1.7.1/run.sh
-ifeq ($(DOCKER_HOST),)
-	DOCKER_HOST := /var/run/docker.sock
-	DOCKER_ADDR := --volume "$(DOCKER_HOST)":"$(DOCKER_HOST)" --env DOCKER_HOST
-else
-	DOCKER_ADDR := --env DOCKER_HOST --env DOCKER_TLS_VERIFY --env DOCKER_CERT_PATH
-endif
-
 # The docker run command for running devrun image
 define DEVRUN
-docker run \
-  ${DOCKER_ADDR} ${COMPOSE_OPTIONS} \
+docker run ${COMPOSE_OPTIONS} \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
   --tty --interactive \
   --volume "`pwd`":"`pwd`" \
   --workdir "`pwd`" \
-  --env-file .env $(patsubst %,--env PORT=%,$(PORT))  \
-  ubuntudesign/devrun:v1.0.3
+  --env-file .env $(patsubst %,--env PORT=%,$(PORT)) $(patsubst %,--env INITIAL_FIXTURE_URL=%,$(INITIAL_FIXTURE_URL)) \
+  devrun
 endef
 
 # Error message if docker is missing
@@ -48,12 +39,6 @@ export GROUP_MESSAGE INSTALL_MESSAGE
 
 .DEFAULT_GOAL := commands
 
-.env:
-	@echo "Notice: .env file not found. Initialising with PORT=8000 and DB=false."
-	@echo ""
-	@echo "PORT=8000" >> .env
-	@echo "DB=false" >> .env
-
 check-for-docker:
 	@if ! command -v docker >/dev/null 2>&1 || ! grep -q '^docker:' /etc/group; then \
 	    echo >&2 "$$DOCKER_MISSING"; \
@@ -65,6 +50,5 @@ check-for-docker:
 	fi
 
 %:
-	@${MAKE} --quiet .env
 	@${MAKE} --quiet check-for-docker
 	@${DEVRUN} $@
