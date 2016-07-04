@@ -15,7 +15,7 @@ endif
 
 ifdef INITIAL_FIXTURE_URL
 	COMPOSE_OPTIONS += --env INITIAL_FIXTURE_URL=${INITIAL_FIXTURE_URL}
-endif 
+endif
 
 # The docker run command for running devrun image
 define DEVRUN
@@ -24,7 +24,7 @@ docker run ${COMPOSE_OPTIONS} \
   --tty --interactive \
   --volume "`pwd`":"`pwd`" \
   --workdir "`pwd`" \
-  ubuntudesign/devrun:v1.1.0
+  ubuntudesign/devrun:v1.1.1
 endef
 
 # Error message if docker is missing
@@ -64,4 +64,3 @@ check-for-docker:
 %:
 	@${MAKE} --quiet check-for-docker
 	@${DEVRUN} $@
-
