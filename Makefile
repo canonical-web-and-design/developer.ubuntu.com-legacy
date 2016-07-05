@@ -24,7 +24,7 @@ docker run ${COMPOSE_OPTIONS} \
   --tty --interactive \
   --volume "`pwd`":"`pwd`" \
   --workdir "`pwd`" \
-  ubuntudesign/devrun:v1.1.1
+  ubuntudesign/devrun:v1.1.2
 endef
 
 # Error message if docker is missing
