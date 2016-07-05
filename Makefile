@@ -24,7 +24,7 @@ docker run ${COMPOSE_OPTIONS} \
   --tty --interactive \
   --volume "`pwd`":"`pwd`" \
   --workdir "`pwd`" \
-  ubuntudesign/devrun:v1.1.1
+  ubuntudesign/devrun:v1.1.2
 endef
 
 # Error message if docker is missing
@@ -47,17 +47,17 @@ $$ newgrp docker
 
 endef
 
-export GROUP_MESSAGE INSTALL_MESSAGE
+export DOCKER_MISSING NOT_IN_GROUP
 
 .DEFAULT_GOAL := commands
 
 check-for-docker:
-	@if ! command -v docker >/dev/null 2>&1 || ! grep -q '^docker:' /etc/group; then \
-	    echo >&2 "$$DOCKER_MISSING"; \
+	@if ! command -v docker >/dev/null 2>&1; then \
+	    echo "$$DOCKER_MISSING" >> /dev/stderr; \
 	    exit 1; \
 	fi
-	@if ! groups | grep -q '\bdocker\b'; then \
-	    echo "$$NOT_IN_GROUP"; \
+	@if grep -q '^docker:' /etc/group && ! groups | grep -q '\bdocker\b'; then \
+	    echo "$$NOT_IN_GROUP" >> /dev/stderr; \
 	    exit 1; \
 	fi
 
