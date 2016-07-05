@@ -40,7 +40,7 @@ If you have access to the private [developer-data repository](https://github.com
 
 3. Use this new URL to set the `INITIAL_CONTENT_FIXTURE`, e.g.:
     ```
-    export INITIAL_CONTENT_FIXTURE=https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
+    export INITIAL_CONTENT_FIXTURE="https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx"
     ```
 
    before runnning the site for the first time.
