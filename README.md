@@ -23,7 +23,7 @@ You can provide an initial site content [database fixture](https://docs.djangopr
 You can instead provide a URL to retrieve this fixture from by setting the `INITIAL_FIXTURE_URL` environment variable, e.g.:
 
 ``` bash
-export INITIAL_CONTENT_FIXTURE=https://example.com/fixtures/initial-content.json
+export INITIAL_FIXTURE_URL=https://example.com/fixtures/initial-content.json
 ```
 
 in which case the initial run of `migrate` will download this file to `developer_portal/fixtures/initial_content.json` (if it doesn't already exist) before importing the fixture.
@@ -38,9 +38,9 @@ If you have access to the private [developer-data repository](https://github.com
     https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx
     ```
 
-3. Use this new URL to set the `INITIAL_CONTENT_FIXTURE`, e.g.:
+3. Use this new URL to set the `INITIAL_FIXTURE_URL`, e.g.:
     ```
-    export INITIAL_CONTENT_FIXTURE="https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx"
+    export INITIAL_FIXTURE_URL="https://raw.githubusercontent.com/ubuntudesign/developer-data/master/initial-content.json?token=xxx"
     ```
 
    before runnning the site for the first time.
