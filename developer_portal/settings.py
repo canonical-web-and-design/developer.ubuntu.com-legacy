@@ -177,7 +177,6 @@ STATIC_ROOT = os.path.join(PROJECT_PATH, "static")
 MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
 MEDIA_URL = '/media/'
 
-ASSETS_URL = '//assets.ubuntu.com/'
 ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
 
 # Django CMS specific settings
