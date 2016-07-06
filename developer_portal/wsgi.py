@@ -7,9 +7,12 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 """
 
-import os, sys
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+import os
+
 os.environ["DJANGO_SETTINGS_MODULE"] = "developer_portal.settings"
 
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+from whitenoise.django import DjangoWhiteNoise
+
+application = DjangoWhiteNoise(get_wsgi_application())
+
