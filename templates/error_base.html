@@ -1,4 +1,4 @@
-{% load cms_tags i18n static assets menu_tags %}
+{% load cms_tags i18n static menu_tags %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
@@ -14,19 +14,19 @@
   <title>{% block title %}Ubuntu developer{% endblock %}</title>
 
   {% block defaultstyles %}
-  <link rel="shortcut icon" href="{% assets 'sites/ubuntu/latest/u/img/favicon.ico' %}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{ ASSET_SERVER_URL }}dbf71c80-favicon.ico" type="image/x-icon" />
   <!-- stylesheets -->
-  <link rel="stylesheet" type="text/css" media="all" href="{% assets 'sites/guidelines/css/responsive/latest/ubuntu-styles.css' %}"/>
-  <link rel="stylesheet" type="text/css" media="screen" href="{% assets 'sites/ubuntu/latest/u/css/styles.css' %}" />
-  <link rel="stylesheet" type="text/css" media="screen" href="{% assets 'sites/ubuntu/latest/u/css/beta/global-responsive.css' %}" />
-  <link rel="stylesheet" type="text/css" media="print" href="{% assets 'sites/ubuntu/latest/u/css/core-print.css' %}" />
+  <link rel="stylesheet" type="text/css" media="all" href="{{ ASSET_SERVER_URL }}f53d8076-ubuntu-styles.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}1a0a185a-styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ ASSET_SERVER_URL }}5ff660b1-global-responsive.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="{{ ASSET_SERVER_URL }}0df231d4-core-print.css" />
   {% endblock defaultstyles%}
   {%block extrastyles %}{% endblock extrastyles%}
 
   {% block defaultheadjs %}
   <!-- javascript -->
-  <script src="{% assets 'sites/ubuntu/latest/u/js/plugins/modernizr.2.7.1.js' %}"></script>
-  <script src="{% assets 'sites/ubuntu/latest/u/js/plugins/Imager.js' %}"></script>
+  <script src="{{ ASSET_SERVER_URL }}b0601acd-modernizr.2.7.1.js"></script>
+  <script src="{{ ASSET_SERVER_URL }}2c8fd8c9-Imager.js"></script>
   {% endblock defaultheadjs %}
 
   {% endblock defaulthead %}
@@ -44,7 +44,7 @@
             <nav role="navigation" class="nav-primary nav-right">
                 <div class="logo">
                     <a class="logo-ubuntu" href="/">
-                        <img width="106" height="25" src="{% assets 'sites/ubuntu/latest/u/img/logos/logo-ubuntu-orange.svg' %}" alt="" />
+                        <img width="106" height="25" src="{{ ASSET_SERVER_URL }}c6679b95-logo-ubuntu-orange.svg" alt="" />
                         <span>{% block logo_text %}{% endblock %}</span>
                     </a>
                 </div>
@@ -74,7 +74,7 @@
                 <form id="form-search" action="{% url 'search' %}" class="header-search">
                     <label for="edit-keys" class="accessibility-aid">{% trans 'Search' %}</label>
                     <input type="search" maxlength="255" name="q" id="search" class="form-text" placeholder="{% trans 'Search' %}" value="" />
-                    <button type="submit"><img src="{% assets 'sites/ubuntu/latest/u/img/search-white.svg' %}" alt="{% trans 'Search' %}" height="28" /></button>
+                    <button type="submit"><img src="{{ ASSET_SERVER_URL }}2196e362-search-white.svg" alt="{% trans 'Search' %}" height="28" /></button>
                 </form>
                 {% endblock search %}
             </nav>
@@ -149,13 +149,13 @@
 	if(!core){ var core = {}; }
 	core.globalPrepend = 'body';
 </script>
-<script src="{% assets 'sites/ubuntu/latest/u/js/plugins/yui-combined.min.js' %}"></script>
-<script src="{% assets 'sites/ubuntu/latest/u/js/global.js' %}"></script>
+<script src="{{ ASSET_SERVER_URL }}40d25181-yui-combined.min.js"></script>
+<script src="{{ ASSET_SERVER_URL }}bdd03093-global.js"></script>
 
-<script src="{% assets 'sites/guidelines/js/responsive/core.js' %}"></script>
-<script src="{% assets 'sites/ubuntu/latest/u/js/global.js' %}"></script>
-<script src="{% assets 'sites/ubuntu/latest/u/js/scratch.js' %}"></script>
-<script src="{% assets 'sites/ubuntu/latest/u/js/plugins/respond.min.js' %}"></script>
+<script src="{{ ASSET_SERVER_URL }}8e7aa35a-core.js"></script>
+<script src="{{ ASSET_SERVER_URL }}bdd03093-global.js"></script>
+<script src="{{ ASSET_SERVER_URL }}ea5f3f25-scratch.js"></script>
+<script src="{{ ASSET_SERVER_URL }}f5bf3854-respond.min.js"></script>
 
 <script>
     (function() {
