@@ -133,11 +133,11 @@ TEMPLATES = [
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
                 'django.contrib.messages.context_processors.messages',
+                'django_asset_server_url.asset_server_url',
             ]
         }
     }
 ]
-
 
 ROOT_URLCONF = 'developer_portal.urls'
 
@@ -177,7 +177,7 @@ STATIC_ROOT = os.path.join(PROJECT_PATH, "static")
 MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
 MEDIA_URL = '/media/'
 
-ASSETS_URL = '//assets.ubuntu.com/'
+ASSET_SERVER_URL = 'https://assets.ubuntu.com/v1/'
 
 # Django CMS specific settings
 #
