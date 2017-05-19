@@ -1,3 +1,7 @@
+**Deprecated**: This project is for an old deprecated version of the developer.ubuntu.com project. For the current site code see [canonical-websites/developer.ubuntu.com](https://github.com/canonical-websites/developer.ubuntu.com).
+
+---
+
 # [developer.ubuntu.com](http://developer.ubuntu.com)
 
 *Not yet live: This fork of [lp:developer-ubuntu-com](https://launchpad.net/developer-ubuntu-com) is intended to become the new official codebase behind http://developer.ubuntu.com when it's ready.*
